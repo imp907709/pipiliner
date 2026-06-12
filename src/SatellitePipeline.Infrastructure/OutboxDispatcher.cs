@@ -1,17 +1,18 @@
 using SatellitePipeline.Application;
+using SatellitePipeline.Infrastructure.Messaging;
 
 namespace SatellitePipeline.Infrastructure;
 
 public sealed class OutboxDispatcher
 {
     private readonly IAppDb db;
-    private readonly InMemoryRabbitMqBus rabbitMqBus;
+    private readonly IMessagePublisher messagePublisher;
     private readonly IClock clock;
 
-    public OutboxDispatcher(IAppDb db, InMemoryRabbitMqBus rabbitMqBus, IClock clock)
+    public OutboxDispatcher(IAppDb db, IMessagePublisher messagePublisher, IClock clock)
     {
         this.db = db;
-        this.rabbitMqBus = rabbitMqBus;
+        this.messagePublisher = messagePublisher;
         this.clock = clock;
     }
 
@@ -27,7 +28,7 @@ public sealed class OutboxDispatcher
         {
             try
             {
-                await rabbitMqBus.Publish(message, ct);
+                await messagePublisher.Publish(message, ct);
                 message.MarkPublished(clock.UtcNow);
             }
             catch (Exception ex)

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N5sOA+lLB6s=",
+  "dgSpecHash": "hLB8PHtIyj0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Downloads\\Telegram Desktop\\src\\src\\SatellitePipeline.Domain\\SatellitePipeline.Domain.csproj",
+  "projectFilePath": "C:\\files\\job\\dpt\\ptojs\\pipeline\\src\\SatellitePipeline.Domain\\SatellitePipeline.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.15\\microsoft.netcore.app.ref.9.0.15.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.15\\microsoft.windowsdesktop.app.ref.9.0.15.nupkg.sha512",

@@ -15,3 +15,21 @@ C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Infrastructur
 C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\refint\SatellitePipeline.Infrastructure.dll
 C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\SatellitePipeline.Infrastructure.pdb
 C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\ref\SatellitePipeline.Infrastructure.dll
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Infrastructure\bin\Debug\net9.0\SatellitePipeline.Infrastructure.deps.json
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Infrastructure\bin\Debug\net9.0\SatellitePipeline.Infrastructure.dll
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Infrastructure\bin\Debug\net9.0\SatellitePipeline.Infrastructure.pdb
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Infrastructure\bin\Debug\net9.0\SatellitePipeline.Application.dll
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Infrastructure\bin\Debug\net9.0\SatellitePipeline.Domain.dll
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Infrastructure\bin\Debug\net9.0\SatellitePipeline.Application.pdb
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Infrastructure\bin\Debug\net9.0\SatellitePipeline.Domain.pdb
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\SatellitePipeline.Infrastructure.csproj.AssemblyReference.cache
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\SatellitePipeline.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\SatellitePipeline.Infrastructure.AssemblyInfoInputs.cache
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\SatellitePipeline.Infrastructure.AssemblyInfo.cs
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\SatellitePipeline.Infrastructure.csproj.CoreCompileInputs.cache
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\SatellitePipeline.Infrastructure.sourcelink.json
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\Satellit.071E0F28.Up2Date
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\SatellitePipeline.Infrastructure.dll
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\refint\SatellitePipeline.Infrastructure.dll
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\SatellitePipeline.Infrastructure.pdb
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\ref\SatellitePipeline.Infrastructure.dll

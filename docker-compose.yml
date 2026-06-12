@@ -1,0 +1,49 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+    container_name: satellite-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Docker
+      ASPNETCORE_URLS: http://+:6080
+      DOTNET_ENVIRONMENT: Docker
+      Infrastructure__PostgresConnectionString: Host=postgres;Port=5432;Database=satellite_pipeline;Username=pipeline;Password=pipeline
+      Infrastructure__RabbitMqHost: rabbitmq
+      Infrastructure__RabbitMqPort: 5672
+      Infrastructure__RabbitMqUser: pipeline
+      Infrastructure__RabbitMqPassword: pipeline
+      Infrastructure__MinioEndpoint: http://minio:9000
+      Infrastructure__MinioAccessKey: pipeline
+      Infrastructure__MinioSecretKey: pipeline123
+      Infrastructure__MinioBucket: satellite
+    ports:
+      - "6180:6080"
+    restart: unless-stopped
+    networks:
+      - satellite-pipeline
+
+  worker:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.worker
+    container_name: satellite-worker
+    environment:
+      DOTNET_ENVIRONMENT: Docker
+      RUN_BACKFILL_ON_STARTUP: "false"
+      Infrastructure__PostgresConnectionString: Host=postgres;Port=5432;Database=satellite_pipeline;Username=pipeline;Password=pipeline
+      Infrastructure__RabbitMqHost: rabbitmq
+      Infrastructure__RabbitMqPort: 5672
+      Infrastructure__RabbitMqUser: pipeline
+      Infrastructure__RabbitMqPassword: pipeline
+      Infrastructure__MinioEndpoint: http://minio:9000
+      Infrastructure__MinioAccessKey: pipeline
+      Infrastructure__MinioSecretKey: pipeline123
+      Infrastructure__MinioBucket: satellite
+    restart: unless-stopped
+    networks:
+      - satellite-pipeline
+
+networks:
+  satellite-pipeline:
+    external: true

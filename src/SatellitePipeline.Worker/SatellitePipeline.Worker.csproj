@@ -2,9 +2,12 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.6" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="../SatellitePipeline.Application/SatellitePipeline.Application.csproj" />
     <ProjectReference Include="../SatellitePipeline.Domain/SatellitePipeline.Domain.csproj" />

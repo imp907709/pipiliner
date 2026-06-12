@@ -36,7 +36,7 @@ public sealed class StartSatelliteProcessingHandler : ICommandHandler<StartSatel
             command.RequestedBy,
             clock.UtcNow);
 
-        db.Runs.Add(run);
+        db.Add(run);
 
         outbox.Add(new SatelliteProcessingRequested(
             command.CorrelationId,
@@ -127,7 +127,7 @@ public sealed class CompleteIndexHandler : ICommandHandler<CompleteIndexCommand>
         if (exists)
             return;
 
-        db.Artifacts.Add(new SatelliteArtifact
+        db.Add(new SatelliteArtifact
         {
             RunId = run.Id,
             FieldId = run.FieldId,
@@ -219,7 +219,7 @@ public sealed class CompleteTiffHandler : ICommandHandler<CompleteTiffCommand>
         if (exists)
             return;
 
-        db.Artifacts.Add(new SatelliteArtifact
+        db.Add(new SatelliteArtifact
         {
             RunId = run.Id,
             FieldId = run.FieldId,
@@ -311,7 +311,7 @@ public sealed class CompletePreviewHandler : ICommandHandler<CompletePreviewComm
         if (exists)
             return;
 
-        db.Artifacts.Add(new SatelliteArtifact
+        db.Add(new SatelliteArtifact
         {
             RunId = run.Id,
             FieldId = run.FieldId,

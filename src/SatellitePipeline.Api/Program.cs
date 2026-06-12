@@ -1,79 +1,56 @@
-using SatellitePipeline.Application;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using SatellitePipeline.Infrastructure;
+using SatellitePipeline.Infrastructure.Hosting;
+using System;
 
-var builder = WebApplication.CreateBuilder(args);
-var pipeline = PipelineComposition.Create();
-
-builder.Services.AddSingleton(pipeline);
-builder.Services.AddSingleton<ICommandBus>(pipeline.CommandBus);
-
-var app = builder.Build();
-
-app.MapPost("/satellite-processing", async (
-    StartSatelliteProcessingRequest request,
-    ICommandBus commandBus,
-    CancellationToken ct) =>
+namespace SatellitePipeline.Api
 {
-    await commandBus.Send(new StartSatelliteProcessingCommand(
-        Guid.NewGuid(),
-        Guid.NewGuid(),
-        request.FieldId,
-        request.GeometryVersion,
-        request.Country,
-        request.Crop,
-        request.PeriodFrom,
-        request.PeriodTo,
-        "api"), ct);
-
-    return Results.Accepted();
-});
-
-app.MapPost("/outbox/drain", async (PipelineComposition pipeline, CancellationToken ct) =>
-{
-    var dispatched = await pipeline.OutboxDispatcher.DrainOnce(ct);
-    return Results.Ok(new { dispatched });
-});
-
-app.MapGet("/runs", (PipelineComposition pipeline) =>
-{
-    return Results.Ok(new
+    public class Program
     {
-        runs = pipeline.Db.Runs.Select(x => new
+        public static void Main(string[] args)
         {
-            x.Id,
-            x.FieldId,
-            x.GeometryVersion,
-            x.Country,
-            x.Crop,
-            x.PeriodFrom,
-            x.PeriodTo,
-            x.Status,
-            x.CurrentStep
-        }),
-        artifacts = pipeline.Db.Artifacts.Select(x => new
-        {
-            x.RunId,
-            x.ArtifactType,
-            x.IndexType,
-            x.MinioKey,
-            x.Status
-        }),
-        outbox = pipeline.Db.OutboxMessages.Select(x => new
-        {
-            x.Type,
-            x.Status,
-            x.RetryCount,
-            x.LastError
-        })
-    });
-});
+            var builder = WebApplication.CreateBuilder(args);
 
-app.Run();
+            builder.Services.AddSatellitePipeline(builder.Configuration);
+            builder.Services.AddHostedService<OutboxDispatcherHostedService>();
+            builder.Services.AddControllers();
 
-public sealed record StartSatelliteProcessingRequest(
-    Guid FieldId,
-    int GeometryVersion,
-    string Country,
-    string Crop,
-    DateOnly PeriodFrom,
-    DateOnly PeriodTo);
+            builder.Services.AddSwaggerGen(swagger =>
+            {
+                swagger.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Satellite Pipeline API",
+                    Version = "v1",
+                    Description = "Satellite imagery processing pipeline"
+                });
+            });
+
+            var app = builder.Build();
+
+            if (app.Environment.IsDevelopment() || app.Environment.EnvironmentName == "Docker")
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI(swagger =>
+                {
+                    swagger.SwaggerEndpoint("/swagger/v1/swagger.json", "Satellite Pipeline API v1");
+                    swagger.RoutePrefix = "swagger";
+                });
+            }
+
+            app.MapControllers();
+
+            var urls = app.Urls;
+            app.Lifetime.ApplicationStarted.Register(() =>
+            {
+                foreach (var url in urls)
+                    Console.WriteLine($"Satellite Pipeline API listening on {url}");
+                Console.WriteLine("Swagger UI: /swagger");
+            });
+
+            app.Run();
+        }
+    }
+}

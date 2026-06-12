@@ -13,3 +13,19 @@ C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Application\o
 C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Application\obj\Debug\net9.0\refint\SatellitePipeline.Application.dll
 C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Application\obj\Debug\net9.0\SatellitePipeline.Application.pdb
 C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Application\obj\Debug\net9.0\ref\SatellitePipeline.Application.dll
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Application\bin\Debug\net9.0\SatellitePipeline.Application.deps.json
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Application\bin\Debug\net9.0\SatellitePipeline.Application.dll
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Application\bin\Debug\net9.0\SatellitePipeline.Application.pdb
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Application\bin\Debug\net9.0\SatellitePipeline.Domain.dll
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Application\bin\Debug\net9.0\SatellitePipeline.Domain.pdb
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Application\obj\Debug\net9.0\SatellitePipeline.Application.csproj.AssemblyReference.cache
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Application\obj\Debug\net9.0\SatellitePipeline.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Application\obj\Debug\net9.0\SatellitePipeline.Application.AssemblyInfoInputs.cache
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Application\obj\Debug\net9.0\SatellitePipeline.Application.AssemblyInfo.cs
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Application\obj\Debug\net9.0\SatellitePipeline.Application.csproj.CoreCompileInputs.cache
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Application\obj\Debug\net9.0\SatellitePipeline.Application.sourcelink.json
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Application\obj\Debug\net9.0\Satellit.30126D7B.Up2Date
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Application\obj\Debug\net9.0\SatellitePipeline.Application.dll
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Application\obj\Debug\net9.0\refint\SatellitePipeline.Application.dll
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Application\obj\Debug\net9.0\SatellitePipeline.Application.pdb
+C:\files\job\dpt\ptojs\pipeline\src\SatellitePipeline.Application\obj\Debug\net9.0\ref\SatellitePipeline.Application.dll

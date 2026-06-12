@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\Downloads\\Telegram Desktop\\src\\src\\SatellitePipeline.Application\\SatellitePipeline.Application.csproj": {}
+    "C:\\files\\job\\dpt\\ptojs\\pipeline\\src\\SatellitePipeline.Application\\SatellitePipeline.Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\Downloads\\Telegram Desktop\\src\\src\\SatellitePipeline.Application\\SatellitePipeline.Application.csproj": {
+    "C:\\files\\job\\dpt\\ptojs\\pipeline\\src\\SatellitePipeline.Application\\SatellitePipeline.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Downloads\\Telegram Desktop\\src\\src\\SatellitePipeline.Application\\SatellitePipeline.Application.csproj",
+        "projectUniqueName": "C:\\files\\job\\dpt\\ptojs\\pipeline\\src\\SatellitePipeline.Application\\SatellitePipeline.Application.csproj",
         "projectName": "SatellitePipeline.Application",
-        "projectPath": "C:\\Users\\user\\Downloads\\Telegram Desktop\\src\\src\\SatellitePipeline.Application\\SatellitePipeline.Application.csproj",
+        "projectPath": "C:\\files\\job\\dpt\\ptojs\\pipeline\\src\\SatellitePipeline.Application\\SatellitePipeline.Application.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Downloads\\Telegram Desktop\\src\\src\\SatellitePipeline.Application\\obj\\",
+        "outputPath": "C:\\files\\job\\dpt\\ptojs\\pipeline\\src\\SatellitePipeline.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,8 +26,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\user\\Downloads\\Telegram Desktop\\src\\src\\SatellitePipeline.Domain\\SatellitePipeline.Domain.csproj": {
-                "projectPath": "C:\\Users\\user\\Downloads\\Telegram Desktop\\src\\src\\SatellitePipeline.Domain\\SatellitePipeline.Domain.csproj"
+              "C:\\files\\job\\dpt\\ptojs\\pipeline\\src\\SatellitePipeline.Domain\\SatellitePipeline.Domain.csproj": {
+                "projectPath": "C:\\files\\job\\dpt\\ptojs\\pipeline\\src\\SatellitePipeline.Domain\\SatellitePipeline.Domain.csproj"
               }
             }
           }
@@ -81,14 +81,14 @@
         }
       }
     },
-    "C:\\Users\\user\\Downloads\\Telegram Desktop\\src\\src\\SatellitePipeline.Domain\\SatellitePipeline.Domain.csproj": {
+    "C:\\files\\job\\dpt\\ptojs\\pipeline\\src\\SatellitePipeline.Domain\\SatellitePipeline.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\Downloads\\Telegram Desktop\\src\\src\\SatellitePipeline.Domain\\SatellitePipeline.Domain.csproj",
+        "projectUniqueName": "C:\\files\\job\\dpt\\ptojs\\pipeline\\src\\SatellitePipeline.Domain\\SatellitePipeline.Domain.csproj",
         "projectName": "SatellitePipeline.Domain",
-        "projectPath": "C:\\Users\\user\\Downloads\\Telegram Desktop\\src\\src\\SatellitePipeline.Domain\\SatellitePipeline.Domain.csproj",
+        "projectPath": "C:\\files\\job\\dpt\\ptojs\\pipeline\\src\\SatellitePipeline.Domain\\SatellitePipeline.Domain.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\Downloads\\Telegram Desktop\\src\\src\\SatellitePipeline.Domain\\obj\\",
+        "outputPath": "C:\\files\\job\\dpt\\ptojs\\pipeline\\src\\SatellitePipeline.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"

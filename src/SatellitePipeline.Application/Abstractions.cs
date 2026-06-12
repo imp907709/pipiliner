@@ -22,9 +22,12 @@ public interface ICommandBus
 
 public interface IAppDb
 {
-    List<SatelliteProcessingRun> Runs { get; }
-    List<SatelliteArtifact> Artifacts { get; }
-    List<OutboxMessage> OutboxMessages { get; }
+    IQueryable<SatelliteProcessingRun> Runs { get; }
+    IQueryable<SatelliteArtifact> Artifacts { get; }
+    IQueryable<OutboxMessage> OutboxMessages { get; }
+    void Add(SatelliteProcessingRun run);
+    void Add(SatelliteArtifact artifact);
+    void Add(OutboxMessage message);
     Task SaveChangesAsync(CancellationToken ct);
 }
 

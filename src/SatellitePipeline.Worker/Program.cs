@@ -1,35 +1,27 @@
-using SatellitePipeline.Application;
+using System;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using SatellitePipeline.Infrastructure;
 
-var pipeline = PipelineComposition.Create();
-
-Console.WriteLine("Quartz-like job starts satellite backfill...");
-await pipeline.BackfillJob.Execute(CancellationToken.None);
-
-for (var i = 0; i < 20; i++)
+namespace SatellitePipeline.Worker
 {
-    var dispatched = await pipeline.OutboxDispatcher.DrainOnce(CancellationToken.None);
-    if (dispatched == 0)
-        break;
-}
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var runBackfill = string.Equals(
+                Environment.GetEnvironmentVariable("RUN_BACKFILL_ON_STARTUP"),
+                "true",
+                StringComparison.OrdinalIgnoreCase);
 
-Console.WriteLine();
-Console.WriteLine("Runs:");
-foreach (var run in pipeline.Db.Runs)
-{
-    Console.WriteLine($"- {run.Id} field={run.FieldId} status={run.Status} step={run.CurrentStep}");
-}
-
-Console.WriteLine();
-Console.WriteLine("Artifacts:");
-foreach (var artifact in pipeline.Db.Artifacts)
-{
-    Console.WriteLine($"- {artifact.ArtifactType}/{artifact.IndexType}: {artifact.MinioKey}");
-}
-
-Console.WriteLine();
-Console.WriteLine("Outbox:");
-foreach (var message in pipeline.Db.OutboxMessages)
-{
-    Console.WriteLine($"- {message.Type}: {message.Status}");
+            Host.CreateDefaultBuilder(args)
+                .ConfigureServices((context, services) =>
+                {
+                    services.AddSatellitePipelineWorker(context.Configuration, runBackfill);
+                })
+                .Build()
+                .Run();
+        }
+    }
 }

@@ -1,0 +1,68 @@
+# Satellite pipeline — host ports (+1000 from defaults)
+# Avoids conflict with other local stacks (e.g. postgres on 5432).
+# Inside Docker network, services still use standard internal ports.
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: satellite-postgres
+    environment:
+      POSTGRES_DB: satellite_pipeline
+      POSTGRES_USER: pipeline
+      POSTGRES_PASSWORD: pipeline
+    ports:
+      - "6432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pipeline -d satellite_pipeline"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - satellite-pipeline
+
+  rabbitmq:
+    image: rabbitmq:3.13-management-alpine
+    container_name: satellite-rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: pipeline
+      RABBITMQ_DEFAULT_PASS: pipeline
+    ports:
+      - "6672:5672"
+      - "16672:15672"
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - satellite-pipeline
+
+  minio:
+    image: minio/minio:latest
+    container_name: satellite-minio
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: pipeline
+      MINIO_ROOT_PASSWORD: pipeline123
+    ports:
+      - "9100:9000"
+      - "9101:9001"
+    volumes:
+      - minio_data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - satellite-pipeline
+
+volumes:
+  postgres_data:
+  minio_data:
+
+networks:
+  satellite-pipeline:
+    name: satellite-pipeline

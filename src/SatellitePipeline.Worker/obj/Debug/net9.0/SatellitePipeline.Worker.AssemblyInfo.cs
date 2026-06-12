@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SatellitePipeline.Worker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b2e1b9ec57e5692dd50f28ac82cce6dde0e1d05")]
 [assembly: System.Reflection.AssemblyProductAttribute("SatellitePipeline.Worker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SatellitePipeline.Worker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

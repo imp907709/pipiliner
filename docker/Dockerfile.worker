@@ -1,0 +1,17 @@
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+WORKDIR /src
+
+COPY src/SatellitePipeline.Domain/SatellitePipeline.Domain.csproj src/SatellitePipeline.Domain/
+COPY src/SatellitePipeline.Application/SatellitePipeline.Application.csproj src/SatellitePipeline.Application/
+COPY src/SatellitePipeline.Infrastructure/SatellitePipeline.Infrastructure.csproj src/SatellitePipeline.Infrastructure/
+COPY src/SatellitePipeline.Worker/SatellitePipeline.Worker.csproj src/SatellitePipeline.Worker/
+
+RUN dotnet restore src/SatellitePipeline.Worker/SatellitePipeline.Worker.csproj
+
+COPY src/ src/
+RUN dotnet publish src/SatellitePipeline.Worker/SatellitePipeline.Worker.csproj -c Release -o /app/publish /p:UseAppHost=false
+
+FROM mcr.microsoft.com/dotnet/runtime:9.0 AS final
+WORKDIR /app
+COPY --from=build /app/publish .
+ENTRYPOINT ["dotnet", "SatellitePipeline.Worker.dll"]

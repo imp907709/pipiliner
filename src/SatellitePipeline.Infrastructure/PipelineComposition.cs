@@ -1,4 +1,6 @@
+using Microsoft.Extensions.DependencyInjection;
 using SatellitePipeline.Application;
+using SatellitePipeline.Infrastructure.Messaging;
 
 namespace SatellitePipeline.Infrastructure;
 
@@ -6,39 +8,51 @@ public sealed class PipelineComposition
 {
     public IAppDb Db { get; }
     public CommandBus CommandBus { get; }
-    public InMemoryRabbitMqBus RabbitMqBus { get; }
     public OutboxDispatcher OutboxDispatcher { get; }
     public SatelliteBackfillJob BackfillJob { get; }
+    public InfrastructureOptions Options { get; }
 
-    private PipelineComposition(
+    public PipelineComposition(
         IAppDb db,
-        CommandBus commandBus,
-        InMemoryRabbitMqBus rabbitMqBus,
-        OutboxDispatcher outboxDispatcher,
-        SatelliteBackfillJob backfillJob)
+        IClock clock,
+        IMessagePublisher messagePublisher,
+        InfrastructureOptions options)
     {
         Db = db;
-        CommandBus = commandBus;
-        RabbitMqBus = rabbitMqBus;
-        OutboxDispatcher = outboxDispatcher;
-        BackfillJob = backfillJob;
+        Options = options;
+        var outbox = new Outbox(db, clock);
+        CommandBus = new CommandBus();
+        RegisterCommandHandlers(CommandBus, db, outbox, clock);
+        OutboxDispatcher = new OutboxDispatcher(db, messagePublisher, clock);
+        BackfillJob = new SatelliteBackfillJob(CommandBus);
     }
 
     public static PipelineComposition Create()
     {
-        IAppDb db = new InMemoryAppDb();
-        IClock clock = new SystemClock();
-        IOutbox outbox = new Outbox(db, clock);
-        var commandBus = new CommandBus();
-        var rabbitMqBus = new InMemoryRabbitMqBus();
+        var db = new InMemoryAppDb();
+        var clock = new SystemClock();
+        var dispatcher = new MessageDispatcher();
+        var publisher = new InMemoryMessagePublisher(dispatcher);
+        var options = new InfrastructureOptions();
+        var composition = new PipelineComposition(db, clock, publisher, options);
+        RegisterInMemoryConsumers(dispatcher, composition);
+        return composition;
+    }
 
-        RegisterCommandHandlers(commandBus, db, outbox, clock);
-        RegisterConsumers(rabbitMqBus, commandBus, db);
+    private static void RegisterInMemoryConsumers(MessageDispatcher dispatcher, PipelineComposition composition)
+    {
+        var orchestrator = new SatelliteProcessOrchestrator(composition.CommandBus);
+        var indexWorker = new IndexWorker(composition.CommandBus, composition.Db, new FakeIndexProcessor());
+        var tiffWorker = new TiffWorker(composition.CommandBus, composition.Db, new FakeTiffProcessor());
+        var previewWorker = new PreviewWorker(composition.CommandBus, composition.Db, new FakePreviewProcessor());
 
-        var dispatcher = new OutboxDispatcher(db, rabbitMqBus, clock);
-        var backfillJob = new SatelliteBackfillJob(commandBus);
-
-        return new PipelineComposition(db, commandBus, rabbitMqBus, dispatcher, backfillJob);
+        dispatcher.Subscribe<SatelliteProcessingRequested>(orchestrator.Handle);
+        dispatcher.Subscribe<IndexReady>(orchestrator.Handle);
+        dispatcher.Subscribe<TiffReady>(orchestrator.Handle);
+        dispatcher.Subscribe<PreviewReady>(orchestrator.Handle);
+        dispatcher.Subscribe<CreateIndexRequested>(indexWorker.Handle);
+        dispatcher.Subscribe<CreateTiffRequested>(tiffWorker.Handle);
+        dispatcher.Subscribe<CreatePreviewRequested>(previewWorker.Handle);
     }
 
     private static void RegisterCommandHandlers(
@@ -55,25 +69,5 @@ public sealed class PipelineComposition
         commandBus.Register(new RequestPreviewHandler(db, outbox, clock));
         commandBus.Register(new CompletePreviewHandler(db, outbox, clock));
         commandBus.Register(new CompleteSatelliteProcessingHandler(db, outbox, clock));
-    }
-
-    private static void RegisterConsumers(
-        InMemoryRabbitMqBus rabbitMqBus,
-        ICommandBus commandBus,
-        IAppDb db)
-    {
-        var orchestrator = new SatelliteProcessOrchestrator(commandBus);
-        var indexWorker = new IndexWorker(commandBus, db, new FakeIndexProcessor());
-        var tiffWorker = new TiffWorker(commandBus, db, new FakeTiffProcessor());
-        var previewWorker = new PreviewWorker(commandBus, db, new FakePreviewProcessor());
-
-        rabbitMqBus.Subscribe<SatelliteProcessingRequested>(orchestrator.Handle);
-        rabbitMqBus.Subscribe<IndexReady>(orchestrator.Handle);
-        rabbitMqBus.Subscribe<TiffReady>(orchestrator.Handle);
-        rabbitMqBus.Subscribe<PreviewReady>(orchestrator.Handle);
-
-        rabbitMqBus.Subscribe<CreateIndexRequested>(indexWorker.Handle);
-        rabbitMqBus.Subscribe<CreateTiffRequested>(tiffWorker.Handle);
-        rabbitMqBus.Subscribe<CreatePreviewRequested>(previewWorker.Handle);
     }
 }
