@@ -1,0 +1,11 @@
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Domain\bin\Debug\net9.0\SatellitePipeline.Domain.deps.json
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Domain\bin\Debug\net9.0\SatellitePipeline.Domain.dll
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Domain\bin\Debug\net9.0\SatellitePipeline.Domain.pdb
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Domain\obj\Debug\net9.0\SatellitePipeline.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Domain\obj\Debug\net9.0\SatellitePipeline.Domain.AssemblyInfoInputs.cache
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Domain\obj\Debug\net9.0\SatellitePipeline.Domain.AssemblyInfo.cs
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Domain\obj\Debug\net9.0\SatellitePipeline.Domain.csproj.CoreCompileInputs.cache
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Domain\obj\Debug\net9.0\SatellitePipeline.Domain.dll
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Domain\obj\Debug\net9.0\refint\SatellitePipeline.Domain.dll
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Domain\obj\Debug\net9.0\SatellitePipeline.Domain.pdb
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Domain\obj\Debug\net9.0\ref\SatellitePipeline.Domain.dll

@@ -1,0 +1,74 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "SatellitePipeline.Api/1.0.0": {
+        "dependencies": {
+          "SatellitePipeline.Application": "1.0.0",
+          "SatellitePipeline.Domain": "1.0.0",
+          "SatellitePipeline.Infrastructure": "1.0.0"
+        },
+        "runtime": {
+          "SatellitePipeline.Api.dll": {}
+        }
+      },
+      "SatellitePipeline.Application/1.0.0": {
+        "dependencies": {
+          "SatellitePipeline.Domain": "1.0.0"
+        },
+        "runtime": {
+          "SatellitePipeline.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "SatellitePipeline.Domain/1.0.0": {
+        "runtime": {
+          "SatellitePipeline.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "SatellitePipeline.Infrastructure/1.0.0": {
+        "dependencies": {
+          "SatellitePipeline.Application": "1.0.0",
+          "SatellitePipeline.Domain": "1.0.0"
+        },
+        "runtime": {
+          "SatellitePipeline.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SatellitePipeline.Api/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SatellitePipeline.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SatellitePipeline.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SatellitePipeline.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

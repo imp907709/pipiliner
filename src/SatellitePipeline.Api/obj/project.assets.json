@@ -1,0 +1,161 @@
+{
+  "version": 3,
+  "targets": {
+    "net9.0": {
+      "SatellitePipeline.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "SatellitePipeline.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SatellitePipeline.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SatellitePipeline.Application.dll": {}
+        }
+      },
+      "SatellitePipeline.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/SatellitePipeline.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SatellitePipeline.Domain.dll": {}
+        }
+      },
+      "SatellitePipeline.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "SatellitePipeline.Application": "1.0.0",
+          "SatellitePipeline.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SatellitePipeline.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SatellitePipeline.Infrastructure.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SatellitePipeline.Application/1.0.0": {
+      "type": "project",
+      "path": "../SatellitePipeline.Application/SatellitePipeline.Application.csproj",
+      "msbuildProject": "../SatellitePipeline.Application/SatellitePipeline.Application.csproj"
+    },
+    "SatellitePipeline.Domain/1.0.0": {
+      "type": "project",
+      "path": "../SatellitePipeline.Domain/SatellitePipeline.Domain.csproj",
+      "msbuildProject": "../SatellitePipeline.Domain/SatellitePipeline.Domain.csproj"
+    },
+    "SatellitePipeline.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../SatellitePipeline.Infrastructure/SatellitePipeline.Infrastructure.csproj",
+      "msbuildProject": "../SatellitePipeline.Infrastructure/SatellitePipeline.Infrastructure.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net9.0": [
+      "SatellitePipeline.Application >= 1.0.0",
+      "SatellitePipeline.Domain >= 1.0.0",
+      "SatellitePipeline.Infrastructure >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\user\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\user\\Downloads\\Telegram Desktop\\src\\src\\SatellitePipeline.Api\\SatellitePipeline.Api.csproj",
+      "projectName": "SatellitePipeline.Api",
+      "projectPath": "C:\\Users\\user\\Downloads\\Telegram Desktop\\src\\src\\SatellitePipeline.Api\\SatellitePipeline.Api.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\Downloads\\Telegram Desktop\\src\\src\\SatellitePipeline.Api\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net9.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "projectReferences": {
+            "C:\\Users\\user\\Downloads\\Telegram Desktop\\src\\src\\SatellitePipeline.Application\\SatellitePipeline.Application.csproj": {
+              "projectPath": "C:\\Users\\user\\Downloads\\Telegram Desktop\\src\\src\\SatellitePipeline.Application\\SatellitePipeline.Application.csproj"
+            },
+            "C:\\Users\\user\\Downloads\\Telegram Desktop\\src\\src\\SatellitePipeline.Domain\\SatellitePipeline.Domain.csproj": {
+              "projectPath": "C:\\Users\\user\\Downloads\\Telegram Desktop\\src\\src\\SatellitePipeline.Domain\\SatellitePipeline.Domain.csproj"
+            },
+            "C:\\Users\\user\\Downloads\\Telegram Desktop\\src\\src\\SatellitePipeline.Infrastructure\\SatellitePipeline.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\user\\Downloads\\Telegram Desktop\\src\\src\\SatellitePipeline.Infrastructure\\SatellitePipeline.Infrastructure.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "10.0.200"
+    },
+    "frameworks": {
+      "net9.0": {
+        "targetAlias": "net9.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[9.0.15, 9.0.15]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[9.0.15, 9.0.15]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[9.0.15, 9.0.15]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[9.0.15, 9.0.15]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

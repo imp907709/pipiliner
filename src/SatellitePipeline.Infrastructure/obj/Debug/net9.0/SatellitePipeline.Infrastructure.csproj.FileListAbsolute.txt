@@ -1,0 +1,17 @@
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Infrastructure\bin\Debug\net9.0\SatellitePipeline.Infrastructure.deps.json
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Infrastructure\bin\Debug\net9.0\SatellitePipeline.Infrastructure.dll
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Infrastructure\bin\Debug\net9.0\SatellitePipeline.Infrastructure.pdb
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Infrastructure\bin\Debug\net9.0\SatellitePipeline.Application.dll
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Infrastructure\bin\Debug\net9.0\SatellitePipeline.Domain.dll
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Infrastructure\bin\Debug\net9.0\SatellitePipeline.Application.pdb
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Infrastructure\bin\Debug\net9.0\SatellitePipeline.Domain.pdb
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\SatellitePipeline.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\SatellitePipeline.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\SatellitePipeline.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\SatellitePipeline.Infrastructure.AssemblyInfo.cs
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\SatellitePipeline.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\Satellit.071E0F28.Up2Date
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\SatellitePipeline.Infrastructure.dll
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\refint\SatellitePipeline.Infrastructure.dll
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\SatellitePipeline.Infrastructure.pdb
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Infrastructure\obj\Debug\net9.0\ref\SatellitePipeline.Infrastructure.dll

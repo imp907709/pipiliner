@@ -1,0 +1,15 @@
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Application\bin\Debug\net9.0\SatellitePipeline.Application.deps.json
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Application\bin\Debug\net9.0\SatellitePipeline.Application.dll
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Application\bin\Debug\net9.0\SatellitePipeline.Application.pdb
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Application\bin\Debug\net9.0\SatellitePipeline.Domain.dll
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Application\bin\Debug\net9.0\SatellitePipeline.Domain.pdb
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Application\obj\Debug\net9.0\SatellitePipeline.Application.csproj.AssemblyReference.cache
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Application\obj\Debug\net9.0\SatellitePipeline.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Application\obj\Debug\net9.0\SatellitePipeline.Application.AssemblyInfoInputs.cache
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Application\obj\Debug\net9.0\SatellitePipeline.Application.AssemblyInfo.cs
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Application\obj\Debug\net9.0\SatellitePipeline.Application.csproj.CoreCompileInputs.cache
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Application\obj\Debug\net9.0\Satellit.30126D7B.Up2Date
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Application\obj\Debug\net9.0\SatellitePipeline.Application.dll
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Application\obj\Debug\net9.0\refint\SatellitePipeline.Application.dll
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Application\obj\Debug\net9.0\SatellitePipeline.Application.pdb
+C:\Users\user\Downloads\Telegram Desktop\src\src\SatellitePipeline.Application\obj\Debug\net9.0\ref\SatellitePipeline.Application.dll

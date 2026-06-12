@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../SatellitePipeline.Application/SatellitePipeline.Application.csproj" />
+    <ProjectReference Include="../SatellitePipeline.Domain/SatellitePipeline.Domain.csproj" />
+    <ProjectReference Include="../SatellitePipeline.Infrastructure/SatellitePipeline.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>
